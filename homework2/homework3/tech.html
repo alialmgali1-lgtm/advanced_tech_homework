@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+<form class="container mt-5">
+
+    <div class="mb-3">
+        <label class="form-label">الرقم 1</label>
+        <input type="number" class="form-control" id="n1">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">الرقم 2</label>
+        <input type="number" class="form-control" id="n2">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">الرقم 3</label>
+        <input type="number" class="form-control" id="n3">
+    </div>
+
+    <br>
+
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="Add">
+        <label class="form-check-label">اضف</label>
+    </div>
+
+    <div id="result1"></div>
+
+    <br>
+
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="Multiplied">
+        <label class="form-check-label">ضاعف</label>
+    </div>
+
+    <div id="result2"></div>
+
+    <br>
+
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="Max">
+        <label class="form-check-label">اعلى رقم</label>
+    </div>
+
+    <div id="result3"></div>
+
+    <br>
+
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="average">
+        <label class="form-check-label">متوسط</label>
+    </div>
+
+    <div id="result4"></div>
+
+    <br>
+
+    <button type="button" class="btn btn-primary"
+    onclick="calc()">
+        Submit
+    </button>
+
+</form>
+
+<script>
+
+function calc()
+{
+
+    var x = Number(document.getElementById("n1").value);
+    var y = Number(document.getElementById("n2").value);
+    var z = Number(document.getElementById("n3").value);
+
+    if(document.getElementById("Add").checked)
+    {
+        document.getElementById("result1").innerHTML =
+        "Result = " + (x + y + z);
+    }
+
+    if(document.getElementById("Multiplied").checked)
+    {
+        document.getElementById("result2").innerHTML =
+        "Result = " + (x * y * z);
+    }
+
+    if(document.getElementById("Max").checked)
+    {
+        document.getElementById("result3").innerHTML =
+        "Result = " + Math.max(x,y,z);
+    }
+
+    if(document.getElementById("average").checked)
+    {
+        document.getElementById("result4").innerHTML =
+        "Result = " + ((x + y + z) / 3);
+    }
+
+}
+
+</script>
+
+</body>
+</html>
